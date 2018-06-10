@@ -1,6 +1,6 @@
 # Animation Tools
 
-The animation tools library is a small set of helper functions and data structures for Arduino that use basic tools and methods of time-based animation to control various actuators.  The tools have been used to control LEDs, stepper motors, servos, and piezo buzzers.  The core of the library is based around 2 basic functions – oscillation & timeline– that can be layered onto eachother for more complex behaviours.The library also contains tools for drawing animation to OLED screens using the [U8G][https://github.com/olikraus/u8g2/wiki] library. These functions are all based on timers, so they do not block any other input/output functions used in a sketch.
+The animation tools library is a small set of helper functions and data structures for Arduino that use basic tools and methods of time-based animation to control various actuators.  The tools have been used to control LEDs, stepper motors, servos, and piezo buzzers.  The core of the library is based around 2 basic functions – oscillation & timeline– that can be layered onto eachother for more complex behaviours.The library also contains tools for drawing animation to OLED screens using the [U8G](https://github.com/olikraus/u8g2/wiki) library. These functions are all based on timers, so they do not block any other input/output functions used in a sketch.
 
 ## Basic Functions:
 
@@ -97,7 +97,7 @@ int currentRotation = getTimelineValue(rotationValues); //to return the current 
 ```
 
 ## OLED Animation functions
-These functions and data structures build on the Timeline and Oscillation tools to create methods for creating animations that can be output to a small OLED screen.  These tools are built around the [U8G][https://github.com/olikraus/u8g2/wiki] Library which handles all of the drawing functions for the screen. These tools provide methods for animating those drawings
+These functions and data structures build on the Timeline and Oscillation tools to create methods for creating animations that can be output to a small OLED screen.  These tools are built around the [U8G](https://github.com/olikraus/u8g2/wiki) Library which handles all of the drawing functions for the screen. These tools provide methods for animating those drawings
 
 ### Data Structures
 
