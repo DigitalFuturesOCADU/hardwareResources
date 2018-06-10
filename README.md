@@ -1,10 +1,10 @@
-#Animation Tools
+# Animation Tools
 
 The animation tools library is a small set of helper functions and data structures for Arduino that use basic tools and methods of time-based animation to control various actuators.  The tools have been used to control LEDs, stepper motors, servos, and piezo buzzers.  The core of the library is based around 2 basic functions – oscillation & timeline– that can be layered onto eachother for more complex behaviours.  These functions are all based on timers, so they do not block any other input/output functions used in a sketch.
 
-##Basic Functions:
+## Basic Functions:
 
-###Oscillation
+### Oscillation
 This function uses a simple sin wave to drive a continuous fade between 2 values and returns an integer.  The function has 5 inputs that can be changed dynamically
 oscillate(int minVal, int maxVal, int offset, float multiplier, long timeInput)
 
@@ -14,19 +14,19 @@ offset: moves initial start of the oscillation sequence.
 multiplier:  used to change the speed of the oscillation (typically < 1, smaller number = slower)
 timeInput: value used to step across the sin wave (typically millis())
 
-####Examples:
+#### Examples:
 
-//oscillate between 0 -255 with a multiplier speed of 0.2
+'''//oscillate between 0 -255 with a multiplier speed of 0.2
 int ledBrightness = oscillate(0,255,0,0.2,millis());
 
 //oscillate between 20 – 150 with a multiplier speed of 0.5 
-int servoRotation = oscillate(20,150,0,0.5,millis());
+int servoRotation = oscillate(20,150,0,0.5,millis());'''
 
 
 Note: oscillate is designed to function as a very simple fade mechanism. If you require more precise or complex controls over values, use Timeline.
 
 
-###Timeline
+### Timeline
 This function creates a method for using keyframe values in time as a means of controlling outputs in Arduino.  It consists of two parts: the Timeline structure and the getTimelineValue function.  The timeline of keyframe values can be set at the beginning of the sketch or changed dynamically at runtime.  The function uses only linear interpolation between the values/time. Note: This is still an early version of the code. It has some quirks.
 
 All timelines have the following parameters. Where X is the index of the array
@@ -50,9 +50,9 @@ This typically isn’t needed. Primarily it is helpful when using a motor shield
 
 To use the function you must create an instance of a Timeline object, define it’s parameters.
 
-####Example:
+#### Example:
 
-Timeline rotationValues:  //define a new Timeline object called rotationValues
+'''Timeline rotationValues:  //define a new Timeline object called rotationValues
 
 
 //inside setup define the parameters of the Timeline
@@ -84,4 +84,4 @@ void loop()
 {
 int currentRotation = getTimelineValue(rotationValues); //to return the current value pass the object in the getTimelineValue function
 
-}
+}'''
