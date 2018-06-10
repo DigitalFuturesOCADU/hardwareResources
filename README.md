@@ -5,14 +5,18 @@ The animation tools library is a small set of helper functions and data structur
 ## Basic Functions:
 
 ### Oscillation
-This function uses a simple sin wave to drive a continuous fade between 2 values and returns an integer.  The function has 5 inputs that can be changed dynamically
+This function uses a simple sin wave to drive a continuous fade between 2 values and returns an integer.
+
+The function has 5 inputs that can be changed dynamically
+```arduino
 oscillate(int minVal, int maxVal, int offset, float multiplier, long timeInput)
 
-minVal: starting value of the oscillation
-maxVal: end value of the oscillation
-offset: moves initial start of the oscillation sequence. 
-multiplier:  used to change the speed of the oscillation (typically < 1, smaller number = slower)
-timeInput: value used to step across the sin wave (typically millis())
+minVal //starting value of the oscillation
+maxVal //end value of the oscillation
+offset //moves initial start of the oscillation sequence. 
+multiplier //used to change the speed of the oscillation (typically < 1, smaller number = slower)
+timeInput//value used to step across the sin wave (typically millis())
+```
 
 #### Examples:
 
@@ -29,25 +33,25 @@ Note: oscillate is designed to function as a very simple fade mechanism. If you 
 
 
 ### Timeline
-This function creates a method for using keyframe values in time as a means of controlling outputs in Arduino.  It consists of two parts: the Timeline structure and the getTimelineValue function.  The timeline of keyframe values can be set at the beginning of the sketch or changed dynamically at runtime.  The function uses only linear interpolation between the values/time. Note: This is still an early version of the code. It has some quirks.
+This function creates a method for using keyframe values in time as a means of controlling outputs in Arduino.  It consists of two parts: the Timeline structure and the getTimelineValue function.  The timeline of keyframe values can be set at the beginning of the sketch or changed dynamically at runtime. The function uses only linear interpolation between the values/time. Note: This is still an early version of the code. It has some quirks.
 
 All timelines have the following parameters. Where X is the index of the array
-
+```
 .timeKey[X]  
 .valKey{X]
-
+```
 These 2 parameters are typically defined together in the same manner you would input this type of data into an animation interface.  Define a value at a time.   The index should start at 0 and must be the same for the timeKey and valKey.
-
+```
 .totalKeys
-
+```
 At this point, you must manually define the total number of keyframes that you have created.  The maximum number of values is 10, but can be changed. (This will be fixed in a future version of the library)
-
+```
 .timelineLoop
-
+```
 This is True by default, but if you want the timeline to stop when it reaches the end it can be set to False.
-
+```
 .startupDelay
-
+```
 This typically isn’t needed. Primarily it is helpful when using a motor shield as they take a few seconds to initialize, thus throwing off the timing.  This corrects that by capturing the time at the bottom of the setup() function.
 
 
