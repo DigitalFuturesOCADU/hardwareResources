@@ -16,11 +16,13 @@ timeInput: value used to step across the sin wave (typically millis())
 
 #### Examples:
 
-''' //oscillate between 0 -255 with a multiplier speed of 0.2
+''' 
+//oscillate between 0 -255 with a multiplier speed of 0.2
 int ledBrightness = oscillate(0,255,0,0.2,millis());
 
 //oscillate between 20 â€“ 150 with a multiplier speed of 0.5 
-int servoRotation = oscillate(20,150,0,0.5,millis()); '''
+int servoRotation = oscillate(20,150,0,0.5,millis()); 
+'''
 
 
 Note: oscillate is designed to function as a very simple fade mechanism. If you require more precise or complex controls over values, use Timeline.
@@ -53,7 +55,8 @@ To use the function you must create an instance of a Timeline object, define itâ
 
 #### Example:
 
-''' Timeline rotationValues:  //define a new Timeline object called rotationValues
+''' 
+Timeline rotationValues:  //define a new Timeline object called rotationValues
 
 
 //inside setup define the parameters of the Timeline
@@ -85,4 +88,5 @@ void loop()
 {
 int currentRotation = getTimelineValue(rotationValues); //to return the current value pass the object in the getTimelineValue function
 
-} '''
+} 
+'''
