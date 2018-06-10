@@ -101,7 +101,8 @@ These functions and data structures build on the Timeline and Oscillation tools 
 
 ### Data Structures
 
-** Point **
+**Point**
+
 This new variable type has a .x and .y parameter. This is helpful for organizing coordinates
 
 ```arduino
