@@ -21,15 +21,15 @@ timeInput//value used to step across the sin wave (typically millis())
 #### Examples:
 
 ```arduino 
-//oscillate between 0 -255 with a multiplier speed of 0.2
+//oscillate between 0 <-> 255 with a multiplier speed of 0.2
 int ledBrightness = oscillate(0,255,0,0.2,millis());
 
-//oscillate between 20 – 150 with a multiplier speed of 0.5 
+//oscillate between 20 <–> 150 with a multiplier speed of 0.5 
 int servoRotation = oscillate(20,150,0,0.5,millis()); 
 ```
 
 
-Note: oscillate is designed to function as a very simple fade mechanism. If you require more precise or complex controls over values, use Timeline.
+Note: oscillate is designed to function as a very simple interpolation mechanism. If you require more precise or complex controls over values, use Timeline.
 
 
 ### Timeline
@@ -101,7 +101,7 @@ These functions and data structures build on the Timeline and Oscillation tools 
 
 ### Data Structures
 
-Point
+** Point **
 This new variable type has a .x and .y parameter. This is helpful for organizing coordinates
 
 ```arduino
