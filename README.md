@@ -32,7 +32,7 @@ int servoRotation = oscillate(20,150,0,0.5,millis());
 
 Note: oscillate is designed to function as a very simple interpolation mechanism. If you require more precise or complex controls over values, use Timeline.
 
-###getTimelineValue
+### getTimelineValue
 #### Returns: integer
 This function returns the current value of a Timeline object. It functions the same as the time slider in an animation program to return the value of a graph at a specific moment.
 
