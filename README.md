@@ -2,7 +2,7 @@
 
 The animation tools library is a small set of helper functions and data structures for Arduino that use basic tools and methods of time-based animation to control various actuators.  The tools have been used to control LEDs, stepper motors, servos, and piezo buzzers.  The core of the library is based around 2 basic functions – oscillation & timeline– that can be layered onto eachother for more complex behaviours.The library also contains tools for drawing animation to OLED screens using the [U8G](https://github.com/olikraus/u8g2/wiki) library. These functions are all based on timers, so they do not block any other input/output functions used in a sketch.
 
-## Basic Functions:
+## Functions
 
 ### Oscillate
 #### Returns: integer
@@ -75,7 +75,8 @@ int currentRotation = getTimelineValue(rotationValues); //to return the current 
 ```
 ### Data Structures
 
-**Point**
+### Point
+
 This new variable type has a .x and .y parameter. This is helpful for organizing coordinates
 
 ```arduino
@@ -91,7 +92,7 @@ point circlePoint2 = {10,20};
 u8g.drawCircle(circlePoint2.x,circlePoint2.y,5);
 
 ```
-**valRange**
+### valRange
 Similar to *point* this data structure is useful when organizing oscillation functions. It has 2 parameters: minVal maxVal
 
 ```arduino
@@ -100,7 +101,8 @@ moveRange.minVal = 10;
 moveRange.maxVal = 100;
 ```
 
-**tri_angles**
+### tri_angles
+
 This data structure was created in conjunction with the *rotateTriangle* function as a streamlined way of inputting the angle offsets to define a rotating triangle.
 
 ```arduino
@@ -113,7 +115,8 @@ rotTri.leg3 = 240;
 tri_angles rotTri = {0,120,240};
 ```
 
-**trianglePoints**
+### trianglePoints
+
 This data structure was created to hold the return values of the *rotateTriangle* function.  It stores the X and Y coordinate of each leg.
 
 ```
