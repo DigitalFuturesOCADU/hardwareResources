@@ -5,6 +5,7 @@ The animation tools library is a small set of helper functions and data structur
 ## Basic Functions:
 
 ### Oscillation
+Returns: integer
 This function uses a simple sin wave to drive a continuous fade between 2 values and returns an integer.
 
 The function has 5 inputs that can be changed dynamically
@@ -102,7 +103,6 @@ These functions and data structures build on the Timeline and Oscillation tools 
 ### Data Structures
 
 **Point**
-
 This new variable type has a .x and .y parameter. This is helpful for organizing coordinates
 
 ```arduino
@@ -118,6 +118,65 @@ point circlePoint2 = {10,20};
 u8g.drawCircle(circlePoint2.x,circlePoint2.y,5);
 
 ```
+**valRange**
+Similar to *point* this data structure is useful when organizing oscillation functions. It has 2 parameters: minVal maxVal
+
+```arduino
+valRange moveXRange;
+moveRange.minVal = 10;
+moveRange.maxVal = 100;
+```
+
+**tri_angles**
+This data structure was created in conjunction with the *rotateTriangle* function as a streamlined way of inputting the angle offsets to define a rotating triangle.
+
+```arduino
+//these values will create an equilateral triangle for the rotation function
+tri_angles rotTri;
+rotTri.leg1 = 0;
+rotTri.leg2 = 120;
+rotTri.leg3 = 240;
+//OR
+tri_angles rotTri = {0,120,240};
+```
+
+**trianglePoints**
+This data structure was created to hold the return values of the *rotateTriangle* function.  It stores the X and Y coordinate of each leg.
+
+```
+.leg1X
+.leg1Y
+.leg2X
+.leg2Y
+.leg3X
+.leg3Y
+```
+
+
+```arduino
+trianglePoints myTriangle;
+myTriangle = rotateTriangle(64, 32, 0, 120, 240, 10, 0.2, millis(), 0);
+u8g.drawTriangle(myTriangle.leg1X,myTriangle.leg1Y,myTriangle.leg2X,myTriangle.leg2Y,myTriangle.leg3X,myTriangle.leg3Y);
+```
+
+
+## Rotation
+There are no rotation functions built into the U8 library so the follow functions and structures can be used.  All functions are based on the point on a circle formulas.
+
+
+###rotatePoint
+Returns:  point Object
+
+The rotatePoint calculates X/Y coordinates of a position given a centerpoint, radius, and angle.  It can be driven by linear time (millis()), an oscillator, or a Timeline object.  
+*Note: When driving it with an oscillator or Timeline set the speedFactor to: 1*
+
+```arduino
+rotatePoint(float centerX, float centerY, float radius, float speedFactor, float rotationInput, int rotOffset)
+
+
+
+
+
 
 
 
