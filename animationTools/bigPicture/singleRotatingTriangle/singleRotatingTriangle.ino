@@ -34,7 +34,7 @@ void loop()
   bigPicture.setDrawColor(1);
 
 
-  trianglePoints tri1 = rotateTriangle(triCenter.x,triCenter.y,spinTri.leg1,spinTri.leg2,spinTri.leg3,10,0.2,oscillate(spinVals.minVal,spinVals.maxVal,0,0.5,timStamp),0);//rotateTriangle(float centerX, float centerY, int legAngle1, int legAngle2, int legAngle3, float radius, float speedFactor, float rotationInput, int rotOffset)
+  trianglePoints tri1 = rotateTriangle(triCenter.x,triCenter.y,spinTri.leg1,spinTri.leg2,spinTri.leg3,10,0.2,oscillate(spinVals.minVal,spinVals.maxVal,0,0.5,timeStamp),0);//rotateTriangle(float centerX, float centerY, int legAngle1, int legAngle2, int legAngle3, float radius, float speedFactor, float rotationInput, int rotOffset)
   bigPicture.drawTriangle(tri1.leg1X,tri1.leg1Y,tri1.leg2X,tri1.leg2Y,tri1.leg3X,tri1.leg3Y);
 
   bigPicture.sendBuffer();     //this is the bottom of the drawing commands
