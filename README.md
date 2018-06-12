@@ -268,7 +268,7 @@ These screens are 128 px X 64 px and communicate over I2C.  They are powered by 
 
 ![alt text](https://github.com/DigitalFuturesOCADU/hardwareResources/blob/master/bpImages/oledWiring.jpg "wireDiagram")
 
-![alt text](https://github.com/DigitalFuturesOCADU/hardwareResources/blob/master/bpImages/oldWiringIRL.jpg.jpg "wireImage")
+![alt text](https://github.com/DigitalFuturesOCADU/hardwareResources/blob/master/bpImages/oldWiringIRL.jpg "wireImage")
 
 
 
